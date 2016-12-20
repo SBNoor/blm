@@ -6,8 +6,8 @@
 #' @return Fitted parameters of the model
 #' @export
 
-coefficient <- function(object) UseMethod("coefficient")
-coefficient.blm <- function(object)
+#coefficient <- function(object) UseMethod("coefficient")
+coefficient <- function(object)
 {
   estimates <- as.vector(object$mean)
 

@@ -4,12 +4,9 @@
 #'
 #' @param object   A fiited model obtained from the blm
 #' @param level    A confidence level
-#'
 #' @return Confidence Interval for each of the parameters
-#' @import stats
 #' @export
-confindenceInterval <- function(object,level = 0.05) UseMethod("confint")
-confint.blm <- function(object,level = 0.05)
+confidenceInterval<- function(object,level = 0.05)
 {
 
   a = c(level/2,1-level/2)
