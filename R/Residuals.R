@@ -11,7 +11,7 @@ residuals <- function(object, ...)
 {
 
   resid_frame <- object$frame[,1]
-  resid_pred <- blm::predict(object)
+  resid_pred <- blm::predict(object,...)
 
   resid_fit <- resid_frame - resid_pred
 
