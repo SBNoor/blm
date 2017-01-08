@@ -8,6 +8,8 @@ test_that("testing the summary function",{
   model <- y~x
 
   fit_blm <- blm(model, alpha = 1, beta = 1)
-  fit_lm <- lm(model)
+  #fit_lm <- lm(model)
+
+  blm::Summary(fit_blm)
 
 })
