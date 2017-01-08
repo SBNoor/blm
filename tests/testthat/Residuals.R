@@ -1,6 +1,6 @@
-context("Residuals")
+context("residuals")
 
-test_that("Residuals",{
+test_that("testing the residuals",{
 
   x <- rnorm(3)
   y <- rnorm(3)
