@@ -7,6 +7,8 @@
 #' @return A list made of mean and sigma (the prior distribution)
 make_prior <- function(model,alpha)
 {
+  if(alpha > 0)
+  {
   model_matrix <- model.matrix(model)
   col_num <- ncol(model_matrix)
 
@@ -14,4 +16,11 @@ make_prior <- function(model,alpha)
   sigma = (1/alpha) * diag(col_num)
 
   return(list(mu = mu,sigma = sigma))
+  }
+  else(alpha <= 0)
+  {
+    print("Alpha must be positive")
+    break
+  }
+
 }

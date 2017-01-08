@@ -1,21 +1,20 @@
-#' Bayesian linear model.
+#' Predict
 #'
-#' Fits a model, given as a formula, optionally with data provided through the "..." parameter.
+#' This function makes prediction based on the fitted model.
 #'
-#' @param model   A formula describing the model.
+#' @param object   A formula describing the model.
 #' @param ...     Additional data, for example a data frame. Feel free to add other options.
 #'
-#' @return A fitted model.
+#' @return A mean vector
+#' @import stats
 #' @export
 predict <- function(object,...){
 
   #phi<- model_matrix(model)
 
-  responseless.formula <- delete.response(terms(object$formula))
+  responseless.formula <- delete.response(terms(object$terms))
   frame <- model.frame(responseless.formula,...)
   phi = model.matrix(responseless.formula, frame)
-
-
 
   mean <- object$mean
 
@@ -25,5 +24,6 @@ predict <- function(object,...){
     means_vect[i] = t(mean) %*% phi[i,]
   }
 
-  return(means_vect = means_vect)
+  names(means_vect) = seq(1, length(means_vect))
+  return(means_vect)
 }

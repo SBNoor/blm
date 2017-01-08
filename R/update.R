@@ -6,9 +6,12 @@
 #' @param prior Prior Distribution
 #' @param beta A precision parameter
 #' @param ... Additional data
+#'
+#' @import stats
 #' @return A list made of mean and sigma (the prior distribution)
 update <- function(model,prior,beta,...)
 {
+
   phi <- model.matrix(model,...)
   s_xy <- (prior$sigma) + (beta * t(phi) %*% phi)
 

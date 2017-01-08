@@ -1,4 +1,3 @@
-
 #' Deviance
 #'
 #' This function just computes the sum of squared distances from the predicted response variables to the observed
@@ -8,6 +7,14 @@
 #'
 #' @return Deviance
 #' @export
-deviance <- function(object, ...){
-  sum((object$frame[,1] - fitted(object))^2)
+deviance <- function(object, ...)
+{
+
+  obj_frame <- object$frame[,1]
+  fitted_var <- blm::fitted(object)
+
+  sq_dist <- sum((obj_frame - fitted_var)^2)
+
+  return(sq_dist)
+
 }

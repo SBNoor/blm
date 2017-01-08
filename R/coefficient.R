@@ -6,14 +6,14 @@
 #' @return Fitted parameters of the model
 #' @export
 
-#coefficient <- function(object) UseMethod("coefficient")
 coefficient <- function(object)
 {
-  estimates <- as.vector(object$mean)
+  estimates <- as.vector(object$mean[,1])
 
   ###extracting the names of the parameters
   nameOfParameters <- rownames(object$mean)
   names(estimates) <- nameOfParameters
 
+  #return(object$mean[,1])
   return(estimates)
 }

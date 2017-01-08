@@ -1,7 +1,6 @@
-
 #' Fitted Response Variables
 #'
-#' Takes a fitted model and optionally the data provided through the "..." parameter and returns the response variables
+#' This function gives the fitted response variables.
 #'
 #' @param object   A fitted model
 #' @param ...     Additional data, for example a data frame. Feel free to add other options.
@@ -10,5 +9,6 @@
 #' @export
 fitted <- function(object, ...)
 {
-  predict(object,...)
+  prediction <- predict(object,...)
+  return(prediction)
 }

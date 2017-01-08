@@ -2,19 +2,19 @@
 % Please edit documentation in R/predict.r
 \name{predict}
 \alias{predict}
-\title{Bayesian linear model.}
+\title{Predict}
 \usage{
 predict(object, ...)
 }
 \arguments{
-\item{...}{Additional data, for example a data frame. Feel free to add other options.}
+\item{object}{A formula describing the model.}
 
-\item{model}{A formula describing the model.}
+\item{...}{Additional data, for example a data frame. Feel free to add other options.}
 }
 \value{
-A fitted model.
+A mean vector
 }
 \description{
-Fits a model, given as a formula, optionally with data provided through the "..." parameter.
+This function makes prediction based on the fitted model.
 }
 
