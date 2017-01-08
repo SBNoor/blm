@@ -42,31 +42,49 @@ install_github("bioinfau/blm")
 ## Functions in the Blm Package
 
 1. blm
+
 This function returns a fitted model. However, for this function to work, the user needs to provide a formula the hyperparameters alpha and beta. 
 
+
 2. confint
+
 This function returns the confidence interval for the fitted parameter. The user needs to provide the fitted model obtained for the blm function and a confidence level (0.95).
 
+
 3. coefficient
+
 This function returns the fitted paramters of the model. The user needs to provide the fitted model.
 
+
 4. predict
+
 This function makes prediction based on the fitted model. The user needs to provide the fitted model and new data (optional). If new data is not provided, the function will make predictions based on the old data.
+
 
 5. residuals
 This function returns the residuals of the fit. That is the difference between predicted values and observed values for the response variable. The user needs to provide the fitted model.
 
+
 6. Fitted
+
 This function gives the fitted response variables. This is not the response variables in the data you fitted the model to, but instead the predictions that the model makes. The user needs to provide the fitted model.
 
+
 7. deviance
+
 This function just computes the sum of squared distances from the predicted response variables to the observed. The user needs to provide the fitted model.
 
+
 8. plots
+
 This function makes a simple plot(s) for the response variable and the predictor variable. The use needs to provide the fitted model.
 
+
 9. print
+
 This function prints how the fitting function was called and what the fitted coefficients are. The user need to provide the fitted model.
 
+
 10. summary
+
 This function prints how the fitting function was called, the fitted coefficients and the residuals of the fit. The user needs to provide the fitted model.
