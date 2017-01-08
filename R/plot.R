@@ -5,6 +5,7 @@
 #' @param object A fitted model obtained from blm function
 #' @param ... Additional data, for example a data frame. Feel free to add other options.
 #'
+#' @import graphics
 #' @export
 plots <- function(object,...){
   variables = names(coefficient(object))
