@@ -14,9 +14,9 @@ Summary <- function(object)
   cat('\n')
 
   cat('\nResiduals:\n')
-  print(residuals(object))
+  print(blm::residuals(object))
 
   cat('\nCoefficients:\n')
-  print(coefficient(object))
+  print(blm::coefficient(object))
 
 }
