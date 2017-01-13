@@ -7,7 +7,7 @@
 #'
 #' @return Fitted response variables
 #' @export
-fitted <- function(object, ...)
+fitted.blm <- function(object, ...)
 {
   prediction <- predict(object,...)
   return(prediction)

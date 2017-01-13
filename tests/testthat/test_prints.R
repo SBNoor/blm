@@ -9,7 +9,7 @@ test_that("testing the print function",{
 
   fit <- blm(model, alpha = 1, beta = 1)
 
-  blm::prints(fit)
+  print.blm(fit)
 
 
 })

@@ -12,7 +12,7 @@ test_that("we can fit blm objects", {
 
     fit <- blm(model, alpha = 1, beta = 1)
 
-    cof <- coefficient(fit)
+    cof <- coefficients.blm(fit)
     names(cof) <- NULL
 
     expect_equal(cof[1], a, tolerance=0.1)

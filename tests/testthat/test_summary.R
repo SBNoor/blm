@@ -10,6 +10,6 @@ test_that("testing the summary function",{
   fit_blm <- blm(model, alpha = 1, beta = 1)
   #fit_lm <- lm(model)
 
-  blm::Summary(fit_blm)
+  summary(fit_blm)
 
 })

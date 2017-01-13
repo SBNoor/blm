@@ -19,7 +19,7 @@ make_prior <- function(model,alpha)
   }
   else(alpha <= 0)
   {
-    print("Alpha must be positive")
+    stop("Alpha must be positive")
     break
   }
 

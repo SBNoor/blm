@@ -3,10 +3,11 @@
 #' This function prints how the fitting function was called, the fitted coefficients and the residuals of the fit.
 #'
 #' @param object A fit model obtained from blm function
+#' @param ... optional parameters
 #'
 #' @export
 
-Summary <- function(object)
+summary.blm <- function(object, ...)
 {
   cat('\nCall:\n')
   print(object$func_call)
@@ -14,9 +15,9 @@ Summary <- function(object)
   cat('\n')
 
   cat('\nResiduals:\n')
-  print(blm::residuals(object))
+  print(residuals.blm(object))
 
   cat('\nCoefficients:\n')
-  print(blm::coefficient(object))
+  print(coefficients.blm(object))
 
 }

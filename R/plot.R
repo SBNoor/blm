@@ -8,7 +8,7 @@
 #' @import graphics
 #' @export
 plots <- function(object,...){
-  variables = names(coefficient(object))
+  variables = names(coefficients.blm(object))
 
   for(i in 2:length(variables)){
     plot(object$frame[,i],object$frame[,1], xlab = variables[i], ylab = "y")

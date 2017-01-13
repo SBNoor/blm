@@ -6,7 +6,7 @@
 #' @return Fitted parameters of the model
 #' @export
 
-coefficient <- function(object)
+coefficients.blm <- function(object)
 {
   estimates <- as.vector(object$mean[,1])
 

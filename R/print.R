@@ -2,14 +2,15 @@
 #'
 #' This function prints how the fitting function was called and what the fitted coefficients are.
 #'
-#' @param object A fit model obtained from blm function
+#' @param x A fit model obtained from blm function
+#' @param ... Additional data
 #' @export
-prints <- function(object)
+print.blm <- function(x,...)
 {
   cat('\nCall:\n')
-  print(object$func_call)
+  print(x$func_call)
 
   cat('\nCoefficients:\n')
-  print(object$mean)
+  print(x$mean)
 
 }

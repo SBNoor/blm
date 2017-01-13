@@ -13,7 +13,7 @@ confint<- function(object,level = 0.95)
 
   a = c((1 - level)/2, 1 - (1-level)/2)
 
-  variables = names(coefficient(object))
+  variables = names(coefficients.blm(object))
 
   m <- matrix(0,nrow = length(variables), ncol = 2)
 

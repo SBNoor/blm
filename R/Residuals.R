@@ -7,11 +7,11 @@
 #'
 #' @return Residuals of the fit
 #' @export
-residuals <- function(object, ...)
+residuals.blm <- function(object, ...)
 {
 
   resid_frame <- object$frame[,1]
-  resid_pred <- blm::predict(object,...)
+  resid_pred <- fitted.blm(object,...)
 
   resid_fit <- resid_frame - resid_pred
 

@@ -7,11 +7,11 @@
 #'
 #' @return Deviance
 #' @export
-deviance <- function(object, ...)
+deviance.blm <- function(object, ...)
 {
 
   obj_frame <- object$frame[,1]
-  fitted_var <- blm::fitted(object)
+  fitted_var <- fitted.blm(object)
 
   sq_dist <- sum((obj_frame - fitted_var)^2)
 

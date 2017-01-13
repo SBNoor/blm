@@ -3,17 +3,18 @@
 #' This function makes prediction based on the fitted model.
 #'
 #' @param object   A formula describing the model.
-#' @param ...     Additional data, for example a data frame. Feel free to add other options.
+#' @param data     Data frame containing data to predict from
+#' @param ...     Additional data. Feel free to add other options.
 #'
 #' @return A mean vector
 #' @import stats
 #' @export
-predict <- function(object,...){
+predict.blm <- function(object, data = object$frame, ...){
 
   #phi<- model_matrix(model)
 
   responseless.formula <- delete.response(terms(object$terms))
-  frame <- model.frame(responseless.formula,...)
+  frame <- model.frame(responseless.formula,data)
   phi = model.matrix(responseless.formula, frame)
 
   mean <- object$mean

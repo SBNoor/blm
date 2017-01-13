@@ -12,8 +12,8 @@ test_that("testing coefficients", {
   fit_blm <- blm(model,alpha = 1,beta = 1)
   fit_lm <- lm(y~x)
 
-  coef_fit_blm <- blm::coefficient(fit_blm)
-  coef_fit_lm <- stats::coefficients(fit_lm)
+  coef_fit_blm <- coefficients.blm(fit_blm)
+  coef_fit_lm <- coefficients(fit_lm)
 
   expect_equal(coef_fit_blm, coef_fit_lm, tolerance=1)
 
