@@ -12,6 +12,13 @@
 #' @export
 blm <- function(model,alpha,beta,...)
 {
+
+  if(alpha <= 0 || beta <= 0)
+  {
+    print("Invalid precision parameter")
+    break
+  }
+
   prior <- make_prior(model,alpha)
 
   update_res <- update(model,prior,beta)

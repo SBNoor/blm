@@ -1,17 +1,20 @@
 #' Plotting the variables
 #'
-#' This function plots the response variable and each of the predictor variable one by one.
+#' This function plots the residuals against the fitted values
 #'
-#' @param object A fitted model obtained from blm function
+#' @param x A fitted model obtained from blm function
 #' @param ... Additional data, for example a data frame. Feel free to add other options.
 #'
 #' @import graphics
 #' @export
-plots <- function(object,...){
-  variables = names(coefficients.blm(object))
+plot.blm <- function(x,...){
+
+  variables = names(coefficients.blm(x))
 
   for(i in 2:length(variables)){
-    plot(object$frame[,i],object$frame[,1], xlab = variables[i], ylab = "y")
+    plot(x$frame[,i],x$frame[,1], xlab = variables[i], ylab = "y")
   }
+
+
 
 }
