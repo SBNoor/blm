@@ -12,13 +12,20 @@
 update <- function(model,prior,beta,...)
 {
 
-  phi <- model.matrix(model,...)
-  s_xy <- (prior$sigma) + (beta * t(phi) %*% phi)
+  if(beta > 0)
+  {
+    phi <- model.matrix(model,...)
+    s_xy <- (prior$sigma) + (beta * t(phi) %*% phi)
 
-  sxy <- solve(s_xy)
+    sxy <- solve(s_xy)
 
-  y <- model.frame(model)
-  m_xy <- beta * sxy %*% t(phi) %*% y[,1]
+    y <- model.frame(model)
+    m_xy <- beta * sxy %*% t(phi) %*% y[,1]
 
-  return(list(mu = m_xy,sigma = sxy))
+    return(list(mu = m_xy,sigma = sxy))
+  }
+  else{
+    print("Beta must be positive")
+    break
+  }
 }

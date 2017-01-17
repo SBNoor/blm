@@ -11,5 +11,7 @@ test_that("testing the print function",{
 
   print.blm(fit)
 
+  #expect_warning(print(fit), regexp = NA)
+
 
 })
